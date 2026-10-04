@@ -1,0 +1,992 @@
+/* =========================================================
+   HUGME MOOD SUMMARY
+   ========================================================= */
+
+.summary-page {
+  min-height: 100vh;
+  background: #f8f6f0;
+  color: #354039;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.summary-header {
+  height: 82px;
+  padding: 0 4.5%;
+  background: #fffdf9;
+  border-bottom: 1px solid #ebe7df;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.summary-back {
+  color: #536b5c;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.summary-back:hover {
+  color: #718a78;
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.summary-logo {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #536b5c;
+}
+
+.summary-logo span {
+  color: #c98f91;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.summary-container {
+  width: 100%;
+  min-height: calc(100vh - 82px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 70px 24px 100px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+   ========================================================= */
+
+.summary-card {
+  width: min(760px, 100%);
+
+  background: #fffdf9;
+
+  border: 1px solid #ebe7df;
+  border-radius: 30px;
+
+  padding: 58px 64px 62px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 20px 60px rgba(60, 70, 60, 0.08);
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* soft decorative circle */
+
+.summary-card::before {
+  content: "";
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: #edf3ea;
+
+  top: -120px;
+  right: -90px;
+
+  z-index: 0;
+}
+
+.summary-card::after {
+  content: "";
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: #f5e9e8;
+
+  bottom: -90px;
+  left: -70px;
+
+  z-index: 0;
+}
+
+
+/* keep content above decorations */
+
+.summary-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   EMOJI
+   ========================================================= */
+
+.summary-emoji {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  background: #edf3ea;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+
+  margin-bottom: 28px;
+
+  box-shadow:
+    0 8px 22px rgba(83, 107, 92, 0.12);
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.summary-label {
+  margin: 0 0 12px;
+
+  color: #c98f91;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.summary-card h1 {
+  margin: 0;
+
+  color: #354039;
+
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.summary-message {
+  max-width: 650px;
+
+  margin: 22px 0 0;
+
+  color: #727b75;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.summary-divider {
+  width: 100%;
+  height: 1px;
+
+  background: #ebe7df;
+
+  margin: 36px 0;
+}
+
+
+/* =========================================================
+   FACTORS
+   ========================================================= */
+
+.summary-factors h3 {
+  margin: 0 0 18px;
+
+  color: #354039;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+
+/* factor tags container */
+
+.factor-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+/* individual factor */
+
+.factor-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 17px;
+
+  border-radius: 50px;
+
+  background: #edf3ea;
+
+  color: #536b5c;
+
+  border: 1px solid #dfe9dd;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.factor-tag:hover {
+  background: #e7eee4;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   REMINDER
+   ========================================================= */
+
+.summary-reminder {
+  margin-top: 36px;
+
+  padding: 20px 22px;
+
+  border-radius: 18px;
+
+  background: #f5e9e8;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+.summary-reminder > span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.summary-reminder strong {
+  display: block;
+
+  color: #536b5c;
+
+  font-size: 15px;
+
+  margin-bottom: 5px;
+}
+
+.summary-reminder p {
+  margin: 0;
+
+  color: #727b75;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.summary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 36px;
+
+  min-width: 210px;
+
+  padding: 15px 25px;
+
+  box-sizing: border-box;
+
+  background: #536b5c;
+  color: white;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 24px rgba(83, 107, 92, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.summary-button:hover {
+  background: #43584b;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 28px rgba(83, 107, 92, 0.25);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-summary {
+  text-align: center;
+}
+
+.empty-summary .summary-emoji {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty-summary .summary-message {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .summary-header {
+    height: 72px;
+    padding: 0 22px;
+  }
+
+  .summary-logo {
+    font-size: 24px;
+  }
+
+  .summary-container {
+    padding: 40px 18px 70px;
+  }
+
+  .summary-card {
+    padding: 42px 30px 45px;
+    border-radius: 24px;
+  }
+
+  .summary-card h1 {
+    font-size: 42px;
+  }
+
+  .summary-message {
+    font-size: 16px;
+  }
+
+  .summary-emoji {
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .summary-header {
+    padding: 0 16px;
+  }
+
+  .summary-back {
+    font-size: 14px;
+  }
+
+  .summary-logo {
+    font-size: 21px;
+  }
+
+  .summary-container {
+    padding: 28px 14px 50px;
+  }
+
+  .summary-card {
+    padding: 32px 22px 35px;
+    border-radius: 20px;
+  }
+
+  .summary-card h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .summary-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .summary-message {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .factor-tag {
+    font-size: 13px;
+    padding: 9px 13px;
+  }
+
+  .summary-reminder {
+    padding: 16px;
+  }
+
+  .summary-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   HUGME - MOOD SUMMARY
+   ========================================================= */
+
+.mood-summary-page {
+  min-height: 100vh;
+  background: #f7f5ef;
+  color: #354039;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.summary-header {
+  height: 82px;
+  background: #fffdf9;
+  border-bottom: 1px solid #ebe7df;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+  box-sizing: border-box;
+}
+
+.summary-back {
+  text-decoration: none;
+  color: #536b5c;
+  font-size: 15px;
+  font-weight: 700;
+
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  transition: all 0.25s ease;
+}
+
+.summary-back:hover {
+  background: #e7eee4;
+  transform: translateX(-3px);
+}
+
+.summary-logo {
+  font-size: 29px;
+  font-weight: 700;
+  color: #536b5c;
+  letter-spacing: -1px;
+}
+
+.summary-logo span {
+  color: #c98f91;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.summary-container {
+  width: 100%;
+  min-height: calc(100vh - 82px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 70px 24px 90px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.summary-card {
+  width: min(900px, 100%);
+  background: #fffdf9;
+
+  border: 1px solid #ebe7df;
+  border-radius: 30px;
+
+  padding: 58px 64px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 20px 55px rgba(60, 70, 60, 0.08),
+    0 4px 15px rgba(60, 70, 60, 0.04);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* decorative background circle */
+
+.summary-card::before {
+  content: "";
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background: #edf3ea;
+
+  top: -110px;
+  right: -90px;
+
+  z-index: 0;
+}
+
+.summary-card::after {
+  content: "";
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: #f5e9e8;
+
+  bottom: -80px;
+  left: -70px;
+
+  z-index: 0;
+}
+
+.summary-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   MOOD ICON
+   ========================================================= */
+
+.summary-emoji-wrapper {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  background: #f4efe4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+
+  margin-bottom: 28px;
+
+  box-shadow:
+    0 8px 20px rgba(60, 70, 60, 0.08);
+
+  animation: floatMood 3s ease-in-out infinite;
+}
+
+@keyframes floatMood {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.summary-label {
+  margin: 0 0 12px;
+
+  color: #c98f91;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.summary-title {
+  margin: 0;
+
+  color: #354039;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  max-width: 760px;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.summary-message {
+  margin: 22px 0 0;
+
+  max-width: 720px;
+
+  color: #727b75;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.summary-divider {
+  width: 100%;
+  height: 1px;
+
+  background: #ebe7df;
+
+  margin: 38px 0;
+}
+
+/* =========================================================
+   FACTORS SECTION
+   ========================================================= */
+
+.summary-factors {
+  margin-top: 0;
+}
+
+.summary-factors-title {
+  margin: 0 0 18px;
+
+  color: #354039;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FACTOR TAGS
+   ========================================================= */
+
+.summary-factor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-factor {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 11px 17px;
+
+  background: #e7eee4;
+
+  border: 1px solid #d9e4d6;
+
+  border-radius: 999px;
+
+  color: #536b5c;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.summary-factor:nth-child(even) {
+  background: #f5e9e8;
+  border-color: #ead7d7;
+  color: #9a7778;
+}
+
+.summary-factor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(60, 70, 60, 0.08);
+}
+
+/* =========================================================
+   REMINDER BOX
+   ========================================================= */
+
+.summary-reminder {
+  margin-top: 38px;
+
+  padding: 24px 26px;
+
+  background: #edf3ea;
+
+  border-radius: 20px;
+
+  border-left: 4px solid #718a78;
+}
+
+.summary-reminder-icon {
+  font-size: 22px;
+  margin-bottom: 7px;
+}
+
+.summary-reminder h3 {
+  margin: 0 0 7px;
+
+  color: #536b5c;
+
+  font-size: 17px;
+}
+
+.summary-reminder p {
+  margin: 0;
+
+  color: #66736b;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ACTION AREA
+   ========================================================= */
+
+.summary-actions {
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.summary-dashboard-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 210px;
+
+  padding: 15px 24px;
+
+  background: #536b5c;
+  color: white;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 24px rgba(83, 107, 92, 0.20);
+
+  transition: all 0.25s ease;
+}
+
+.summary-dashboard-button:hover {
+  background: #43594c;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 28px rgba(83, 107, 92, 0.25);
+}
+
+.summary-check-again {
+  color: #718a78;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.summary-check-again:hover {
+  color: #536b5c;
+}
+
+/* =========================================================
+   SMALL DECORATIVE LEAF
+   ========================================================= */
+
+.summary-decoration {
+  position: absolute;
+
+  right: 45px;
+  bottom: 32px;
+
+  font-size: 38px;
+
+  opacity: 0.35;
+
+  transform: rotate(-12deg);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .summary-header {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .summary-logo {
+    font-size: 24px;
+  }
+
+  .summary-container {
+    padding: 35px 16px 60px;
+  }
+
+  .summary-card {
+    padding: 38px 28px;
+    border-radius: 24px;
+  }
+
+  .summary-emoji-wrapper {
+    width: 70px;
+    height: 70px;
+    font-size: 34px;
+  }
+
+  .summary-title {
+    font-size: 46px;
+    letter-spacing: -1.5px;
+  }
+
+  .summary-message {
+    font-size: 16px;
+  }
+
+  .summary-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-dashboard-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .summary-header {
+    padding: 0 15px;
+  }
+
+  .summary-back {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .summary-logo {
+    font-size: 21px;
+  }
+
+  .summary-container {
+    padding: 25px 12px 45px;
+  }
+
+  .summary-card {
+    padding: 30px 22px;
+    border-radius: 20px;
+  }
+
+  .summary-title {
+    font-size: 39px;
+  }
+
+  .summary-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .summary-factor {
+    font-size: 13px;
+    padding: 9px 13px;
+  }
+}
